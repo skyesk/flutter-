@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oktoast/oktoast.dart';
+import 'package:test_all/page/home_page.dart';
 import 'package:test_all/widget/CustomIcons.dart';
 import 'package:test_all/widget/FormCard.dart';
 import 'package:test_all/widget/SocialIcon.dart';
-
 
 class LoginPage extends StatefulWidget {
   @override
@@ -67,8 +68,6 @@ class _LoginPageState extends State<LoginPage> {
               Expanded(
                 child: Container(),
               ),
-              Image.network(
-                  "http://pic37.nipic.com/20140113/8800276_184927469000_2.png",)
             ],
           ),
           SingleChildScrollView(
@@ -155,7 +154,13 @@ class _LoginPageState extends State<LoginPage> {
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => new HomePage()),
+                                  );
+                                },
                                 child: Center(
                                   child: Text(
                                     "登录",
