@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 var pageList = [
   PageModel(
-      imageUrl: "../assets/illustration.png",
+      imageUrl: "assets/illustration.png",
       title: "监护",
       body: "守护病人的健康",
       titleGradient: gradients[0]),
   PageModel(
-      imageUrl: "../assets/illustration2.png",
+      imageUrl: "assets/illustration2.png",
       title: "便利",
       body: "提供医护人员的便利",
       titleGradient: gradients[1]),
   PageModel(
-      imageUrl: "../assets/illustration3.png",
+      imageUrl: "assets/illustration3.png",
       title: "未来",
       body: "带来物联网时代的创想",
       titleGradient: gradients[2]),
