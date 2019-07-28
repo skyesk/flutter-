@@ -5,6 +5,8 @@ import 'package:test_login_view/Widgets/FormCard.dart';
 import 'package:test_login_view/Widgets/SocialIcon.dart';
 import 'package:test_login_view/Widgets/CustomIcons.dart';
 
+import 'package:test_login_view/service/check_user_method.dart';
+
 void main() => runApp(MaterialApp(
       home: MyApp(),
       debugShowCheckedModeBanner: false,
@@ -160,7 +162,16 @@ class _MyAppState extends State<MyApp> {
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
-                                onTap: () {},
+                                onTap: () async {
+                                  
+                                  await check_user().then((value){
+                                    if(value){
+                                      print("登录成功");
+                                    }else{
+                                      print("登录失败");
+                                    }
+                                  });
+                                },
                                 child: Center(
                                   child: Text(
                                     "登录",
@@ -184,7 +195,7 @@ class _MyAppState extends State<MyApp> {
                     children: <Widget>[
                       horizontalLine(),
                       Text(
-                        "其他方式紧急登陆",
+                        "其他方式紧急登录",
                         style: TextStyle(
                             fontSize: 16.0, fontFamily: "Poppins-Medium"),
                       ),
@@ -220,7 +231,7 @@ class _MyAppState extends State<MyApp> {
                           Colors.green[300],
                           Colors.green[500]
                         ],
-                        iconData: CustomIcons.wechat,
+                        iconData: CustomIcons.phone,
                         onPressed: () {},
                       ),
                     ],
